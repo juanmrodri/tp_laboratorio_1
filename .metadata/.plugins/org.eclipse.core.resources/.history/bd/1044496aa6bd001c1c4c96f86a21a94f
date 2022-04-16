@@ -26,7 +26,7 @@
 int utn_getNumber(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
 
 /**
-* \brief Solicita un numero flotante a un usuario
+* \brief Solicita un numero flotante a un usuario y se llama a la funcion getInt para recibirlo
 * \param pResultado Se carga el numero ingresado
 * \param mensaje Mensaje que solicita que se debe hacer
 * \param mensajeError Es el mensaje a ser mostrado en caso de error
