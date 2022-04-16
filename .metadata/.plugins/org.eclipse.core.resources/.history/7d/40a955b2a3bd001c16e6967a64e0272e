@@ -1,0 +1,34 @@
+/*
+ * calculos.h
+ *
+ *  Created on: 15 abr. 2022
+ *      Author: jmrodri
+ */
+
+#ifndef CALCULOS_H_
+#define CALCULOS_H_
+
+/**
+* \brief permite realijar el calculo pertinente para el pago en debito
+* \param pResultado puntero con el resultado de la operacion
+* \param importe valor del importe para realizar el calculo
+* \return exito = [0] - error = [1]
+*/
+int calculaTarjetaDebito(float *pResultado, float importe);
+
+/**
+* \brief permite realijar el calculo pertinente para el pago en credito
+* \param pResultado puntero con el resultado de la operacion
+* \param importe valor del importe para realizar el calculo
+* \return exito = [0] - error = [1]
+*/
+int calculaTarjetaCredito(float *pResultado, float importe);
+
+int calcularBitcoin(double *pResultado, float importe);
+
+int calcularUnitario(float *pResultado, float importe, int distancia);
+
+int calcularDiferencia(float *pResultado, float importeAerolineas, int importeLatam);
+
+
+#endif /* CALCULOS_H_ */
