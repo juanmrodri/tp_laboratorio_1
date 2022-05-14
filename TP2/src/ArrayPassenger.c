@@ -2,7 +2,7 @@
  * ArrayPassenger.c
  *
  *  Created on: 27 abr 2022
- *      Author: Rodriguez Juan Manuel
+ *      Author: juanm
  */
 
 #include <stdlib.h>
@@ -120,11 +120,11 @@ int loadPassengers(Passenger* list, int len)
 			printf("\t----------------------------------------------\n\n");
 			//printf("\nlugares disponibles: %d\n\n", len-(indexFree+1));
 
-			if(utn_getText(auxName, 51,"\tIngrese el nombre del pasajero: ", "\n\tError al ingresar el nombre\n", 2)==0)
+			if(utn_getText(auxName, 51,"\n\tIngrese el nombre del pasajero: ", "\n\tError al ingresar el nombre\n", 2)==0)
 			{
 				if(utn_getText(auxLastName, 51, "\n\tIngrese el apellido del pasajero: ", "\n\tError al ingresar el apellido\n", 2)==0)
 				{
-					if(utn_getFloat(&auxPrice, "\n\tIngrese el precio del vuelo: ", "\n\tError al ingresar el precio\n", 50000, 1000000, 2)==0)
+					if(utn_getFloat(&auxPrice, "\n\tIngrese el precio del vuelo: ", "\n\tError al ingresar el precio\n", 50000, 900000, 2)==0)
 					{
 						if(utn_getText(auxFlycode, 10, "\n\tIngrese el codigo de vuelo: ", "\n\tError al ingresar el codigo de vuelo\n", 2)==0)
 						{
@@ -608,12 +608,20 @@ int sortPassengersByCode(Passenger* list, int len, int order)
 				flagSwap=0;
 				for(i=0;i<newLen;i++)
 				{
-					if(list[i].statusFlight > list[i+1].statusFlight) // s1 es mayor que s2
+					if(list[i].statusFlight > list[i+1].statusFlight)
 					{
 						flagSwap=1;
 						aux = list[i];
 						list[i] = list[i+1];
 						list[i+1] = aux;
+
+						if(strcmp(list[i].flycode,list[i].flycode) < 0)
+						{
+							flagSwap=1;
+							aux = list[i];
+							list[i] = list[i+1];
+							list[i+1] = aux;
+						}
 					}
 				}
 				newLen--;
@@ -629,12 +637,19 @@ int sortPassengersByCode(Passenger* list, int len, int order)
 					flagSwap=0;
 					for(i=0;i<newLen;i++)
 					{
-						if(list[i].statusFlight < list[i+1].statusFlight) // s1 es menor que s2
+						if(list[i].statusFlight < list[i+1].statusFlight)
 						{
 							flagSwap=1;
 							aux = list[i];
 							list[i] = list[i+1];
 							list[i+1] = aux;
+							if(strcmp(list[i].flycode,list[i].flycode) > 0)
+							{
+								flagSwap=1;
+								aux = list[i];
+								list[i] = list[i+1];
+								list[i+1] = aux;
+							}
 						}
 					}
 					newLen--;

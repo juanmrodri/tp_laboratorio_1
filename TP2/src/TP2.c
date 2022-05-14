@@ -35,10 +35,10 @@ int main(void) {
 	forcedLoadPassenger(passengerList, LEN_PASSENGERS, "Aldo", "Tomaso", 50000, 4, 1, "MDQ");
 	forcedLoadPassenger(passengerList, LEN_PASSENGERS, "Carlos", "Roldan", 75000, 2, 1, "BSA");
 	forcedLoadPassenger(passengerList, LEN_PASSENGERS, "Aristobulo", "Saez", 50000, 2, 2, "MDZ");
-	forcedLoadPassenger(passengerList, LEN_PASSENGERS, "Anibal", "Baez", 95000, 3, 2, "XPR002");
-	forcedLoadPassenger(passengerList, LEN_PASSENGERS, "Roberto", "Camanio", 50000, 1, 1, "XPR002");
-	forcedLoadPassenger(passengerList, LEN_PASSENGERS, "Roberto", "Rodriguez", 120000, 2, 1, "XPR002");
-	forcedLoadPassenger(passengerList, LEN_PASSENGERS, "Anibal", "Rodriguez", 50000, 1, 1, "XPR002");
+	forcedLoadPassenger(passengerList, LEN_PASSENGERS, "Anibal", "Baez", 95000, 3, 2, "XPR");
+	forcedLoadPassenger(passengerList, LEN_PASSENGERS, "Roberto", "Camanio", 50000, 1, 1, "XPR");
+	forcedLoadPassenger(passengerList, LEN_PASSENGERS, "Roberto", "Rodriguez", 120000, 2, 1, "XPR");
+	forcedLoadPassenger(passengerList, LEN_PASSENGERS, "Anibal", "Rodriguez", 50000, 1, 1, "XPR");
 
 	do
 	{
